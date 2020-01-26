@@ -9,21 +9,25 @@ import java.util.regex.Pattern;
 public class Sumator implements SumatorInterface {
 
     private int length;
+
     private long countCorrect;
     private long countIncorrect;
-    private String num1;
-    private String num2;
-    private String num3;
+
     private BigDecimal number1;
     private BigDecimal number2;
     private BigDecimal number3;
     private BigDecimal checkSum;
+
+    private String num1;
+    private String num2;
+    private String num3;
+
     private Pattern pattern = Pattern.compile("[a-zA-Z$&+:=?@#|'<>^*()%!]");
     private Matcher matcher;
 
     public static void main(String[] args) {
         Sumator sumator = new Sumator();
-        sumator.run("src/main/resources/file.txt");
+        sumator.run("");
     }
 
     @Override
@@ -73,7 +77,7 @@ public class Sumator implements SumatorInterface {
         for (String s : line) {
             matcher = pattern.matcher(s);
             if (matcher.find()) {
-                System.out.println("File should not contain letters");
+                System.out.println("File should not contain letters or unexpected characters");
                 System.exit(0);
             }
         }
