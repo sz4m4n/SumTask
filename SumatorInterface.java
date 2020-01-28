@@ -1,5 +1,5 @@
 public interface SumatorInterface {
 
     void run(String file);
-    void sumNumbers(String n1, String n2, String n3);
+    void sumNumbers(String num1, String num2, String num3);
 }
